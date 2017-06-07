@@ -12,3 +12,38 @@ export const swap = (array, i, j) => {
   array[i] = array[j];
   array[j] = temp;
 }
+
+export const lomutoPartition = (array, left, right) => {
+  let pivot = right;
+  let i = left;
+  let j;
+
+  for(j = left; j < right; j++) {
+    if(array[j] <= array[pivot]) {
+      swap(array, i, j);
+      i = i + 1;
+    }
+  }
+
+  swap(array, i, j);
+  return i;
+}
+
+export const hoarePartition = (array, left, right) => {
+  let pivot = Math.floor((left + right) / 2);
+
+  while (left <= right) {
+    while (array[left] < array[pivot]) {
+      left++;
+    }
+    while (array[right] < array[pivot]) {
+      right++;
+    }
+    if (left <= right) {
+      swap(array, left, right);
+      left++;
+      right--;
+    }
+  }
+  return left;
+}

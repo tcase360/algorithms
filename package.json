@@ -15,9 +15,9 @@
     "mocha": "^3.4.2"
   },
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register ./test/**/*.spec.js",
+    "test": "mocha --compilers js:babel-core/register ./tests/**/*.spec.js",
     "start": "babel-node --presets es2015 ./implementations/**/**.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "MIT"
 }

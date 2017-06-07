@@ -1,21 +1,21 @@
 const assert = require('assert');
-import { quickSort, quickSortBasic } from '../implementations/sorting/quick-sort';
+import QuickSort from '../implementations/sorting/quick-sort';
 
 const unsortedArray = [4, 3, 5, 8, 6, 7, 9, 10, 0, 2, 1];
 const sortedArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 describe('Array', function() {
-  describe('#quickSortBasic', function() {
+  describe('#QuickSort.basicImplementation', function() {
     it('should return a sorted array', function() {
-      assert.equal(sortedArray.join(','), quickSortBasic(unsortedArray).join(','));
+      assert.equal(sortedArray.join(','), QuickSort.basicImplementation(unsortedArray).join(','));
     });
   });
 });
 
-// describe('Array', function() {
-//   describe('#quickSort', function() {
-//     it('should return a sorted array', function() {
-//       assert.equal(sortedArray.join(','), quickSort(unsortedArray).join(','));
-//     });
-//   });
-// });
+describe('Array', function() {
+  describe('#QuickSort.optimizedImplementation', function() {
+    it('should return a sorted array', function() {
+      assert.equal(sortedArray.join(','), QuickSort.optimizedImplementation(unsortedArray).join(','));
+    });
+  });
+});
