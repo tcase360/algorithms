@@ -16,8 +16,9 @@ export const swap = (array, i, j) => {
 export const lomutoPartition = (array, left, right) => {
   let pivot = right;
   let i = left;
+  let j;
 
-  for(let j = left; j < right; j++) {
+  for(j = left; j < right; j++) {
     if(array[j] <= array[pivot]) {
       swap(array, i, j);
       i = i + 1;
