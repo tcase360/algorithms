@@ -6,10 +6,14 @@
 
 import { swap, randomArray } from '../communal-functions';
 
-class quickSort {
+class QuickSort {
 
   constructor() {
     this.randomArray = randomArray(1000);
+  }
+
+  get basicImplementation() {
+    return this.basicImplementation(array);
   }
 
   basicImplementation(array) {
