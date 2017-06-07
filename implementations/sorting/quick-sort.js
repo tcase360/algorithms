@@ -49,7 +49,27 @@ class QuickSort {
     return this.basicImplementation(lesser).concat(pivot, this.basicImplementation(greater));
   }
 
-  static 
+  static optimizedImplementation(array, left, right) {
+    left = left || 0;
+    right = right || array.length - 1;
+
+
+  }
+
+  partitionLomuto(array, left, right) {
+    let pivot = right;
+    let i = left;
+
+    for(let j = left; j < right; j++) {
+      if(array[j] <= array[pivot]) {
+        swap(array, i, j);
+        i = i + 1;
+      }
+    }
+
+    swap(array, i, j);
+    return i;
+  }
 }
 
 export default QuickSort;
