@@ -82,9 +82,9 @@ class QuickSort {
     let pivot;
 
     if(pivot !== 'lomuto') {
-      pivot = this.lomutoPartition(array, left, right);
+      pivot = lomutoPartition(array, left, right);
     } else {
-      pivot = this.hoarePartition(array, left, right);
+      pivot = hoarePartition(array, left, right);
     }
 
     if(left < pivot - 1) {

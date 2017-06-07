@@ -18,9 +18,7 @@ export const lomutoPartition = (array, left, right) => {
   let i = left;
 
   for(let j = left; j < right; j++) {
-    this.countInner++;
     if(array[j] <= array[pivot]) {
-      this.countSwap++;
       swap(array, i, j);
       i = i + 1;
     }
@@ -34,7 +32,6 @@ export const hoarePartition = (array, left, right) => {
   let pivot = Math.floor((left + right) / 2);
 
   while (left <= right) {
-    this.countInner++;
     while (array[left] < array[pivot]) {
       left++;
     }
@@ -42,7 +39,6 @@ export const hoarePartition = (array, left, right) => {
       right++;
     }
     if (left <= right) {
-      this.countSwap++;
       swap(array, left, right);
       left++;
       right--;
