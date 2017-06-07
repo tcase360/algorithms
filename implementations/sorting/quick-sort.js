@@ -27,6 +27,28 @@ class QuickSort {
 
   constructor() {
     this.randomArray = randomArray(1000);
+    this.partition = 'hoare';
+    this.counters = {
+      countOuter: 0,
+      countInner: 0,
+      countSwap: 0
+    }
+  }
+
+  resetCounters() {
+    this.counters.countOuter = 0;
+    this.counters.countInner = 0;
+    this.counters.countSwap = 0;
+  }
+
+  static setPartition(partition) {
+    if(partition === 'hoare') {
+      this.partition = 'hoare';
+    }
+
+    if(partition === 'lomuto') {
+      this.partition = 'lomuto';
+    }
   }
 
   static basicImplementation(array) {
@@ -45,7 +67,6 @@ class QuickSort {
         greater.push(array[i]);
       }
     }
-
     return this.basicImplementation(lesser).concat(pivot, this.basicImplementation(greater));
   }
 
@@ -53,15 +74,31 @@ class QuickSort {
     left = left || 0;
     right = right || array.length - 1;
 
+    let pivot;
 
+    if(pivot !== 'lomuto') {
+      pivot = lomutoPartition(array, left, right);
+    } else {
+      pivot = hoarePartition(array, left, right);
+    }
+
+    if(left < pivot - 1) {
+      this.optimizedImplementation(array, left, pivot - 1);
+    }
+    if(right > pivot) {
+      this.optimizedImplementation(array, pivot, right);
+    }
+    return array;
   }
 
-  partitionLomuto(array, left, right) {
+  lomutoPartition(array, left, right) {
     let pivot = right;
     let i = left;
 
     for(let j = left; j < right; j++) {
+      this.countInner++;
       if(array[j] <= array[pivot]) {
+        this.countSwap++;
         swap(array, i, j);
         i = i + 1;
       }
@@ -69,6 +106,27 @@ class QuickSort {
 
     swap(array, i, j);
     return i;
+  }
+
+  hoarePartition(array, left, right) {
+    let pivot = Math.floor((left + right) / 2);
+
+    while (left <= right) {
+      this.countInner++;
+      while (array[left] < array[pivot]) {
+        left++;
+      }
+      while (array[right] < array[pivot]) {
+        right++;
+      }
+      if (left <= right) {
+        this.countSwap++;
+        swap(array, left, right);
+        left++;
+        right--;
+      }
+    }
+    return left;
   }
 }
 
