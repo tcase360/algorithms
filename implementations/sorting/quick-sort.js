@@ -29,11 +29,7 @@ class QuickSort {
     this.randomArray = randomArray(1000);
   }
 
-  get basicImplementation() {
-    return this.basicImplementation(array);
-  }
-
-  basicImplementation(array) {
+  static basicImplementation(array) {
     if(array.length < 2) {
       return array;
     }
@@ -50,8 +46,12 @@ class QuickSort {
       }
     }
 
-    return quickSortBasic(lesser).concat(pivot, quickSortBasic(greater));
+    return this.basicImplementation(lesser).concat(pivot, this.basicImplementation(greater));
   }
+
+  static 
 }
+
+export default QuickSort;
 
 let arr = randomArray(1000);
