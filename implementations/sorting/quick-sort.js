@@ -21,7 +21,12 @@
  *
  */
 
-import { swap, randomArray } from '../communal-functions';
+import {
+  swap,
+  randomArray,
+  lomutoPartition,
+  hoarePartition,
+ } from '../communal-functions';
 
 class QuickSort {
 
@@ -77,9 +82,9 @@ class QuickSort {
     let pivot;
 
     if(pivot !== 'lomuto') {
-      pivot = lomutoPartition(array, left, right);
+      pivot = this.lomutoPartition(array, left, right);
     } else {
-      pivot = hoarePartition(array, left, right);
+      pivot = this.hoarePartition(array, left, right);
     }
 
     if(left < pivot - 1) {
@@ -89,44 +94,6 @@ class QuickSort {
       this.optimizedImplementation(array, pivot, right);
     }
     return array;
-  }
-
-  lomutoPartition(array, left, right) {
-    let pivot = right;
-    let i = left;
-
-    for(let j = left; j < right; j++) {
-      this.countInner++;
-      if(array[j] <= array[pivot]) {
-        this.countSwap++;
-        swap(array, i, j);
-        i = i + 1;
-      }
-    }
-
-    swap(array, i, j);
-    return i;
-  }
-
-  hoarePartition(array, left, right) {
-    let pivot = Math.floor((left + right) / 2);
-
-    while (left <= right) {
-      this.countInner++;
-      while (array[left] < array[pivot]) {
-        left++;
-      }
-      while (array[right] < array[pivot]) {
-        right++;
-      }
-      if (left <= right) {
-        this.countSwap++;
-        swap(array, left, right);
-        left++;
-        right--;
-      }
-    }
-    return left;
   }
 }
 

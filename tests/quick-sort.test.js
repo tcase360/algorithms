@@ -12,10 +12,10 @@ describe('Array', function() {
   });
 });
 
-// describe('Array', function() {
-//   describe('#quickSort', function() {
-//     it('should return a sorted array', function() {
-//       assert.equal(sortedArray.join(','), quickSort(unsortedArray).join(','));
-//     });
-//   });
-// });
+describe('Array', function() {
+  describe('#QuickSort.optimizedImplementation', function() {
+    it('should return a sorted array', function() {
+      assert.equal(sortedArray.join(','), QuickSort.optimizedImplementation(unsortedArray).join(','));
+    });
+  });
+});
