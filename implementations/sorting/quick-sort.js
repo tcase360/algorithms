@@ -15,7 +15,9 @@
  * compare it with the rest of the array, and any elements
  * less than the partition will go into the "lesser" array,
  * any elements greater than the partition will go into the
- * "greater" array
+ * "greater" array. Concat the arrays (don't forget the
+ * partition element also) and rinse and repeat all the way
+ * through the array.
  *
  */
 
