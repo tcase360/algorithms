@@ -6,24 +6,31 @@
 
 import { swap, randomArray } from '../communal-functions';
 
-export function quickSortBasic(array) {
-  if(array.length < 2) {
-    return array;
+class quickSort {
+
+  constructor() {
+    this.randomArray = randomArray(1000);
   }
 
-  let pivot = array[0];
-  let lesser = [];
-  let greater = [];
-
-  for(let i = 1; i < array.length; i++) {
-    if(array[i] < pivot) {
-      lesser.push(array[i]);
-    } else {
-      greater.push(array[i]);
+  basicImplementation(array) {
+    if(array.length < 2) {
+      return array;
     }
-  }
 
-  return quickSortBasic(lesser).concat(pivot, quickSortBasic(greater));
+    let pivot = array[0];
+    let lesser = [];
+    let greater = [];
+
+    for(let i = 1; i < array.length; i++) {
+      if(array[i] < pivot) {
+        lesser.push(array[i]);
+      } else {
+        greater.push(array[i]);
+      }
+    }
+
+    return quickSortBasic(lesser).concat(pivot, quickSortBasic(greater));
+  }
 }
 
 let arr = randomArray(1000);
