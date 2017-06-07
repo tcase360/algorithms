@@ -1,0 +1,23 @@
+{
+  "name": "algorithms",
+  "version": "1.0.0",
+  "description": "Algorithms I've studied, implemented and tested in JavaScript (to help with TDD and algorithm/data structure studies)",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-preset-env": "^1.5.1",
+    "babel-preset-es2015": "^6.24.1",
+    "mocha": "^3.4.2"
+  },
+  "scripts": {
+    "test": "mocha --compilers js:babel-core/register ./test/**/*.spec.js",
+    "start": "babel-node --presets es2015 ./implementations/**/**.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
