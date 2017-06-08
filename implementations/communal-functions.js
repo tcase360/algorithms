@@ -52,7 +52,7 @@ export const hoarePartition = (array, left, right) => {
   return left;
 }
 
-// Returns an array that is randomized
+// Returns an array that is randomized - Fisher Yates algorithm
 export const randomizeArray = (array) => {
   let m = array.length, t, i;
 
