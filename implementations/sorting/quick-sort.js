@@ -56,6 +56,11 @@ class QuickSort {
     }
   }
 
+  // This is basic because it is easy to read -
+  // the problem being when making the pivot the
+  // first element, it's a worst case scenario
+  // and performance degrades greatly. That is
+  // why there is a "basic" and "optimized" implementation
   static basicImplementation(array) {
     if(array.length < 2) {
       return array;
@@ -75,6 +80,8 @@ class QuickSort {
     return this.basicImplementation(lesser).concat(pivot, this.basicImplementation(greater));
   }
 
+  // This incorporates the 'hoare' and 'lomuto' partitions,
+  // in order to increase performance.
   static optimizedImplementation(array, left, right) {
     left = left || 0;
     right = right || array.length - 1;
