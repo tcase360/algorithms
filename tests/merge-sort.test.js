@@ -6,16 +6,16 @@ const sortedArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 describe('Array', function() {
   describe('#MergeSort.basicImplementation', function() {
-    it('should return a sorted array', function() {
-      assert.equal(sortedArray.join(','), MergeSort.basicImplementation(unsortedArray).join(','));
+    it('should return a sorted array from high to low', function() {
+      assert.equal(sortedArray.reverse().join(','), MergeSort.topDown(unsortedArray).join(','));
     });
   });
 });
 
-describe('Array', function() {
-  describe('#MergeSort.optimizedImplementation', function() {
-    it('should return a sorted array', function() {
-      assert.equal(sortedArray.join(','), MergeSort.optimizedImplementation(unsortedArray).join(','));
-    });
-  });
-});
+// describe('Array', function() {
+//   describe('#MergeSort.optimizedImplementation', function() {
+//     it('should return a sorted array', function() {
+//       assert.equal(sortedArray.join(','), MergeSort.bottomUp(unsortedArray).join(','));
+//     });
+//   });
+// });

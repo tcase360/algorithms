@@ -25,18 +25,28 @@ import {
      let left = array.slice(0, middle);
      let right = array.slice(middle);
 
-     return this.topDownMerge(topDown(left), topDown(right));
+     return this.topDownMerge(this.topDown(left), this.topDown(right));
    }
 
-   topDownMerge(left, right) {
+   static topDownMerge(left, right) {
+     let array = [];
 
+     while (left.length && right.length) {
+       if(left[0] > right[0]) {
+         array.push(left.shift());
+       } else {
+         array.push(right.shift());
+       }
+     }
+
+     return array.concat(left.slice()).concat(right.slice());
    }
 
    static bottomUp(array) {
 
    }
 
-   bottomUpMerge(left, right) {
+   static bottomUpMerge(left, right) {
 
    }
  }
