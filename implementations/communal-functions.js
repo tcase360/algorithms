@@ -70,7 +70,7 @@ export const randomizeArray = (array) => {
 }
 
 // Generate Ordered Array
-export const generateOrderedArray = (number) {
+export const generateOrderedArray = (number) => {
   let array = [];
   for (var i = 0; i < number; i++) {
     array.push(i);
