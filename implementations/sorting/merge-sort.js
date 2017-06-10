@@ -5,9 +5,11 @@ import {
   randomizeArray,
  } from '../communal-functions';
 
- class MergeSort {
+ import Sorting from '../sorting';
+
+ class MergeSort extends Sorting {
    constructor() {
-     this.randomArray = randomArray(1000);
+     this.randomArray = super.randomArray(1000);
      this.counters = {
        countOuter: 0,
        countInner: 0,
