@@ -9,7 +9,7 @@ class Sorting {
     };
   }
 
-  generateOrderedArray(count) {
+  static generateOrderedArray(count) {
     let array = [];
     for (var i = 0; i < count; i++) {
       array.push(i);
@@ -17,7 +17,7 @@ class Sorting {
     return array;
   }
 
-  randomizeArray(array) {
+  static randomizeArray(array) {
     let m = array.length, t, i;
 
     // while there are still elements to shuffle
@@ -33,7 +33,7 @@ class Sorting {
     return array;
   }
 
-  hoarePartition(array, left, right) {
+  static hoarePartition(array, left, right) {
     let pivot = Math.floor((left + right) / 2);
 
     while (left <= right) {
@@ -44,7 +44,7 @@ class Sorting {
         right++;
       }
       if (left <= right) {
-        swap(array, left, right);
+        this.swap(array, left, right);
         left++;
         right--;
       }
@@ -52,23 +52,23 @@ class Sorting {
     return left;
   }
 
-  lomutoPartition(array, left, right) {
+  static lomutoPartition(array, left, right) {
     let pivot = right;
     let i = left;
     let j;
 
     for(j = left; j < right; j++) {
       if(array[j] <= array[pivot]) {
-        swap(array, i, j);
+        this.swap(array, i, j);
         i = i + 1;
       }
     }
 
-    swap(array, i, j);
+    this.swap(array, i, j);
     return i;
   }
 
-  swap(array, i, j) {
+  static swap(array, i, j) {
     let temp = array[i];
     array[i] = array[j];
     array[j] = temp;

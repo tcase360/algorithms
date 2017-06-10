@@ -38,6 +38,11 @@
  *
  */
 
+import {
+  swap,
+  randomArray,
+} from '../communal-functions';
+
 import Sorting from '../sorting';
 
 class BubbleSort extends Sorting {

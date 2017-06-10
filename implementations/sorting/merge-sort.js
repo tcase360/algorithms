@@ -9,6 +9,7 @@ import {
 
  class MergeSort extends Sorting {
    constructor() {
+     super();
      this.randomArray = super.randomArray(1000);
      this.counters = {
        countOuter: 0,

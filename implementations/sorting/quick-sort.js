@@ -32,7 +32,8 @@ import Sorting from '../sorting';
 class QuickSort extends Sorting {
 
   constructor() {
-    this.randomArray = randomArray(1000);
+    super();
+    this.randomArray = super.randomArray(1000);
     this.partition = 'hoare';
     this.counters = {
       countOuter: 0,
