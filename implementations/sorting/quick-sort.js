@@ -21,23 +21,19 @@
  *
  */
 
-import {
-  swap,
-  randomArray,
-  lomutoPartition,
-  hoarePartition,
- } from '../communal-functions';
+import Sorting from '../sorting';
 
-class QuickSort {
+class QuickSort extends Sorting {
 
   constructor() {
-    this.randomArray = randomArray(1000);
+    super();
+    this.randomArray = super.randomArray(1000);
     this.partition = 'hoare';
     this.counters = {
       countOuter: 0,
       countInner: 0,
       countSwap: 0
-    }
+    };
   }
 
   resetCounters() {
@@ -89,9 +85,9 @@ class QuickSort {
     let pivot;
 
     if(pivot !== 'lomuto') {
-      pivot = lomutoPartition(array, left, right);
+      pivot = super.lomutoPartition(array, left, right);
     } else {
-      pivot = hoarePartition(array, left, right);
+      pivot = super.hoarePartition(array, left, right);
     }
 
     if(left < pivot - 1) {
@@ -105,5 +101,3 @@ class QuickSort {
 }
 
 export default QuickSort;
-
-let arr = randomArray(1000);

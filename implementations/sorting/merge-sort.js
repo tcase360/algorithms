@@ -1,13 +1,9 @@
-import {
-  swap,
-  randomArray,
-  generateOrderedArray,
-  randomizeArray,
- } from '../communal-functions';
+import Sorting from '../sorting';
 
- class MergeSort {
+class MergeSort extends Sorting {
    constructor() {
-     this.randomArray = randomArray(1000);
+     super();
+     this.randomArray = super.randomArray(1000);
      this.counters = {
        countOuter: 0,
        countInner: 0,
