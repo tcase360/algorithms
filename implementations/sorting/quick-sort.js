@@ -21,12 +21,6 @@
  *
  */
 
-import {
-  randomArray,
-  lomutoPartition,
-  hoarePartition,
- } from '../communal-functions';
-
 import Sorting from '../sorting';
 
 class QuickSort extends Sorting {
@@ -107,5 +101,3 @@ class QuickSort extends Sorting {
 }
 
 export default QuickSort;
-
-let arr = randomArray(1000);
