@@ -77,3 +77,21 @@ export const generateOrderedArray = (number) => {
   }
   return array;
 }
+
+class Sorting {
+  constructor() {
+    this.randomArray = randomArray(1000);
+    this.partition = 'hoare';
+    this.counters = {
+      countOuter: 0,
+      countInner: 0,
+      countSwap: 0
+    };
+  }
+
+  randomArray() {
+
+  }
+}
+
+export default Sorting;
