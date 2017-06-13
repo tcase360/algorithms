@@ -1,6 +1,7 @@
 class Sorting {
   constructor() {
-    this.randomArray = randomArray(1000);
+    this.expectedArray = generateOrderedArray(1000);
+    this.randomArray = randomizeArray(this.expectedArray);
     this.partition = 'hoare';
     this.counters = {
       countOuter: 0,
