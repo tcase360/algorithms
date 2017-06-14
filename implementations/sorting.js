@@ -1,6 +1,5 @@
 class Sorting {
   constructor() {
-    this.randomArray = randomArray(1000);
     this.partition = 'hoare';
     this.counters = {
       countOuter: 0,
@@ -11,7 +10,7 @@ class Sorting {
 
   static generateOrderedArray(count) {
     let array = [];
-    for (var i = 0; i < count; i++) {
+    for (var i = 0; i <= count; i++) {
       array.push(i);
     }
     return array;

@@ -46,7 +46,7 @@ import {
 import Sorting from '../sorting';
 
 class BubbleSort extends Sorting {
-
+  
 }
 
 export default BubbleSort;
@@ -79,7 +79,6 @@ export function bubbleSort(array) {
   console.timeEnd('bubble sort');
   return array;
 }
-
 
 
 export function bubbleSortWithLogs(array) {
